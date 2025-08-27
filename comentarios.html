@@ -1,10 +1,35 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Comentários</title>
-  <body>
-    <div style="width:100%; min-height:1800px;">
+  <style>
+    /* Remove margens e define altura total */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    /* Força o container do Cusdis a ocupar tudo */
+    #cusdis_thread {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 700px; /* Você pode aumentar se quiser */
+      box-sizing: border-box;
+    }
+
+    /* Deixa o iframe interno flexível */
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+<body>
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="7279a08d-b1f2-48ac-8651-490928de78df"
@@ -14,19 +39,17 @@
     data-theme="auto"
     data-lang="pt-BR">
   </div>
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-</div>
 
-    <script>
-      (function () {
-        var params = new URLSearchParams(location.search);
-        var id = params.get('page') || location.pathname;    // ID único por post
-        var el = document.getElementById('cusdis_thread');
-        el.setAttribute('data-page-id', id);
-        el.setAttribute('data-page-url', document.referrer || '');
-        el.setAttribute('data-page-title', id);
-      })();
-    </script>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-  </body>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('page') || location.pathname;
+      const el = document.getElementById('cusdis_thread');
+      el.setAttribute('data-page-id', id);
+      el.setAttribute('data-page-url', document.referrer || '');
+      el.setAttribute('data-page-title', id);
+    })();
+  </script>
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+</body>
 </html>
