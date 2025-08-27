@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Comentários</title>
+  <body>
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="7279a08d-b1f2-48ac-8651-490928de78df"
+      data-page-id=""
+      data-page-url=""
+      data-page-title=""
+      data-theme="auto"
+      data-lang="pt-BR"></div>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var id = params.get('page') || location.pathname;    // ID único por post
+        var el = document.getElementById('cusdis_thread');
+        el.setAttribute('data-page-id', id);
+        el.setAttribute('data-page-url', document.referrer || '');
+        el.setAttribute('data-page-title', id);
+      })();
+    </script>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  </body>
+</html>
